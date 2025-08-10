@@ -11,11 +11,6 @@ type WordFromDB = {
   created_at: string;
 };
 
-type ListFromDB = {
-  id: string;
-  // ... other list properties
-};
-
 type LearningSessionProps = {
   words: WordFromDB[];
 };
@@ -23,7 +18,7 @@ type LearningSessionProps = {
 export const LearningSession: React.FC<LearningSessionProps> = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [shuffledWords, setShuffledWords] = useState(() => [...words].sort(() => Math.random() - 0.5));
-
+  
   const currentWord = shuffledWords[currentWordIndex];
 
   const handleAssessment = (knewIt: boolean) => {
@@ -53,14 +48,14 @@ export const LearningSession: React.FC<LearningSessionProps> = ({ words }) => {
       <Flashcard word={currentWord} />
 
       <div className="mt-4 grid grid-cols-2 gap-4">
-        <button
-          onClick={() => handleAssessment(false)}
+        <button 
+          onClick={() => handleAssessment(false)} 
           className="p-4 bg-red-500 text-white rounded hover:bg-red-600"
         >
           Try Again
         </button>
-        <button
-          onClick={() => handleAssessment(true)}
+        <button 
+          onClick={() => handleAssessment(true)} 
           className="p-4 bg-green-500 text-white rounded hover:bg-green-600"
         >
           I Knew It

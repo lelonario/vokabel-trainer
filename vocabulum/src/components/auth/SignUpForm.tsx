@@ -70,8 +70,8 @@ export const SignUpForm = () => {
           disabled={loading}
         />
       </div>
-      <button
-        type="submit"
+      <button 
+        type="submit" 
         className="p-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 disabled:opacity-50"
         disabled={loading}
       >

@@ -42,7 +42,7 @@ export default async function LearnListPage({ params }: LearnListPageProps) {
 
   // Check if the user is authorized to view this list
   if (!list.is_public && list.user_id !== session.user.id) {
-    notFound();
+    notFound(); 
   }
 
   return (
