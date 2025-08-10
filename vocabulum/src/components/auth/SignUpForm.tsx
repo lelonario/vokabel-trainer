@@ -33,7 +33,7 @@ export const SignUpForm = () => {
       <div className="text-center">
         <h2 className="text-xl font-semibold">Check your email!</h2>
         <p className="mt-2 text-muted-foreground">
-          We've sent a confirmation link to your email address. Please click the link to complete your registration.
+          We&apos;ve sent a confirmation link to your email address. Please click the link to complete your registration.
         </p>
       </div>
     );
@@ -70,8 +70,8 @@ export const SignUpForm = () => {
           disabled={loading}
         />
       </div>
-      <button
-        type="submit"
+      <button 
+        type="submit" 
         className="p-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 disabled:opacity-50"
         disabled={loading}
       >
