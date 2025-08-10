@@ -2,13 +2,12 @@ import { createSupabaseServerClient } from '@/lib/supabase/server';
 import { notFound, redirect } from 'next/navigation';
 import { EditListForm } from '@/components/forms/EditListForm';
 
-type EditListPageProps = {
-  params: {
-    listId: string;
-  };
-};
-
-export default async function EditListPage({ params }: EditListPageProps) {
+// The props type is now defined directly in the function signature
+export default async function EditListPage({ 
+  params,
+}: { 
+  params: { listId: string };
+}) {
   const supabase = createSupabaseServerClient();
 
   const { data: { session } } = await supabase.auth.getSession();
@@ -28,7 +27,7 @@ export default async function EditListPage({ params }: EditListPageProps) {
 
   if (list.user_id !== session.user.id) {
     // Or show a more specific "forbidden" page
-    notFound();
+    notFound(); 
   }
 
   const { data: languages, error: languagesError } = await supabase
