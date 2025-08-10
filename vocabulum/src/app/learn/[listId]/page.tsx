@@ -51,7 +51,7 @@ export default async function LearnListPage({ params }: LearnListPageProps) {
         <h1 className="text-2xl font-bold">{list.title}</h1>
         {list.description && <p className="text-muted-foreground">{list.description}</p>}
       </div>
-      <LearningSession list={list} words={list.words} />
+      <LearningSession words={list.words} />
     </div>
   );
 }

@@ -17,11 +17,10 @@ type ListFromDB = {
 };
 
 type LearningSessionProps = {
-  list: ListFromDB;
   words: WordFromDB[];
 };
 
-export const LearningSession: React.FC<LearningSessionProps> = ({ list, words }) => {
+export const LearningSession: React.FC<LearningSessionProps> = ({ words }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [shuffledWords, setShuffledWords] = useState(() => [...words].sort(() => Math.random() - 0.5));
 
